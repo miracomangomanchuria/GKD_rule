@@ -1,0 +1,633 @@
+{
+    "id": -2,
+    "name": "本地订阅",
+    "version": 24,
+    "author": "gkd",
+    "apps": [
+        {
+            "id": "com.ss.android.ugc.aweme.lite",
+            "name": "抖音极速版",
+            "groups": [
+                {
+                    "name": "首页-团购推荐-点击不感兴趣",
+                    "key": 1,
+                    "activityIds": [
+                        "com.ss.android.ugc.aweme.main.MainActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"eh6\"][text=\"不感兴趣\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.idotools.qrcode",
+            "name": "多多扫描二维码",
+            "groups": [
+                {
+                    "name": "跳过首页广告",
+                    "key": 1,
+                    "activityIds": [
+                        "com.idotools.qrcode.SplashActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"splash_skip\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "扫码页中央广告",
+                    "key": 2,
+                    "activityIds": [
+                        "com.idotools.qrcode.ScanActivity",
+                        "com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text=\"跳过\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        },
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@Image[text=\"\"] < View + [text=\"反馈\"] "
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        },
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text=\"| 跳过\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        },
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[desc^=\"webview-close:\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        },
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"tt_reward_full_count_down_after_close\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.apkpure.aegon",
+            "name": "APKPure",
+            "groups": [
+                {
+                    "name": "首页-屏蔽升级",
+                    "key": 1,
+                    "activityIds": [
+                        "com.apkmatrix.components.clientupdate.UpdateDialogActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"arg\"][text=\"CANCEL\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "首页-右下角转盘",
+                    "key": 2,
+                    "activityIds": [
+                        "com.apkpure.aegon.main.activity.MainTabActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@ImageView[clickable=true][visibleToUser=true]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "首页-开屏跳过",
+                    "key": 3,
+                    "activityIds": [
+                        "com.apkpure.aegon.plugin.runtime.PluginDefaultProxyActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text=\"skip\"][id$=\"btn_close\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "org.localsend.localsend_app",
+            "name": "localsend",
+            "groups": [
+                {
+                    "name": "自动复制文本",
+                    "key": 1,
+                    "activityIds": [
+                        "org.localsend.localsend_app.MainActivity",
+                        "com.huawei.android.launcher.unihome.UniHomeLauncher"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[name=\"android.widget.Button\"][desc=\"复制\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.eg.android.AlipayGphone",
+            "name": "支付宝",
+            "groups": [
+                {
+                    "name": "屏蔽升级提示",
+                    "key": 1,
+                    "activityIds": [
+                        "com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@TextView < [id$=\"btn_close\"][desc=\"取消\"] + TextView[id$=\"title_txt_1\"][text=\"版本更新\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.weico.international",
+            "name": "微博国际版",
+            "groups": [
+                {
+                    "name": "信息流广告-新",
+                    "key": 1,
+                    "activityIds": [
+                        "com.weico.international.activity.MainFragmentActivity",
+                        "com.weico.international.ui.search.SearchActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "ComposeView > View > View[childCount=5] > View > @TextView[text=\"不感兴趣\"] "
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.zhihu.android",
+            "name": "知乎",
+            "groups": [
+                {
+                    "name": "推荐按钮-快分享给好友吧",
+                    "key": 1,
+                    "activityIds": [
+                        "com..android.mixshortcontainer.MixShortContainerActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text=\"快分享给好友吧！\"] + ListView + View > @Image"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.lxkj.dmhw",
+            "name": "呆萌价",
+            "groups": [
+                {
+                    "name": "开屏广告右上角跳过",
+                    "key": 0,
+                    "activityIds": [
+                        "com.lxkj.dmhw.activity.ScreenActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"screen_image\"] + [id$=\"screen_clear\"] > @[text=\"跳过\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "首页中间广告跳过",
+                    "key": 1,
+                    "activityIds": [
+                        "com.lxkj.dmhw.activity.MainActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"dialog_advertising_image\"] + @[id$=\"dialog_advertising_cancel\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        },
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"fragment_one_rolling_message_close\"] > ImageView"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.huawei.android.totemweather",
+            "name": "华为天气",
+            "groups": [
+                {
+                    "name": "天气详情页中间广告",
+                    "key": 0,
+                    "activityIds": [
+                        "com.huawei.android.totemweather.WeatherWebViewActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text^=\"ic_ad_close_background\"][visibleToUser=true]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.jd.jdhealth",
+            "name": "京东健康",
+            "groups": [
+                {
+                    "name": "开屏右上角广告",
+                    "key": 0,
+                    "activityIds": [
+                        "com.jd.jdhealth.ui.activity.SplashAdActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text^=\"跳过\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.tencent.mm",
+            "name": "微信小程序首页广告",
+            "groups": [
+                {
+                    "name": "首页广告",
+                    "key": 0,
+                    "activityIds": [
+                        "com.tencent.mm.plugin.appbrand.ui.AppBrandUI00",
+                        "com.tencent.mm.plugin.appbrand.ui.AppBrandUI01",
+                        "com.tencent.mm.plugin.appbrand.ui.AppBrandUI02"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text=\"跳过\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "切换回来时候的中央广告",
+                    "key": 0,
+                    "activityIds": [
+                        "com.tencent.mm.plugin.appbrand.ui.AppBrandUI"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@ImageView < FrameLayout < FrameLayout - TextView < FrameLayout - FrameLayout - FrameLayout - TextView < FrameLayout"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "com.sina.weibo",
+            "name": "新浪微博",
+            "groups": [
+                {
+                    "name": "自动领取右下角阅览红包",
+                    "key": 1,
+                    "activityIds": [
+                        "com.sina.weibo.MainTabActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"complete_rp_iv\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "视频广告页底部悬浮",
+                    "key": 2,
+                    "activityIds": [
+                        "com.sina.weibo.preview.MediaPreviewActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@ImageView[id^=\"com.sina.weibo:id/close\"] < FrameLayout[id^=\"com.sina.weibo:id/close\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "微博首页签到",
+                    "key": 3,
+                    "activityIds": [
+                        "com.sina.weibo.MainTabActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@View[name=\"android.view.View\"] - [id$=\"ll_check_in_container\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "博文详情页左下角推荐转发",
+                    "key": 4,
+                    "activityIds": [
+                        "com.sina.weibo.feed.SubCommentActiity",
+                        "com.sina.weibo.feed.DetailWeiboActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@TextView[id$=\"tv_close\"] - ImageView - LinearLayout"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "评论页推荐微博",
+                    "key": 5,
+                    "activityIds": [
+                        "com.sina.weibo.utils.WeiboDialog$CustomDialog",
+                        "com.sina.weibo.feed.DetailWeiboActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@[text=\"不感兴趣\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "关闭微博详情页下方推荐关注",
+                    "key": 6,
+                    "activityIds": [
+                        "com.sina.weibo.feed.DetailWeiboActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"ivClose\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        },
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "@[id$=\"iv_close_icon\"] - [id$=\"tv_tips\"] < [id$=\"ll_close\"] - [id$=\"rl_baseInfo\"] < RelativeLayout < RelativeLayout + RelativeLayout > [id$=\"rl_comment_trend_buttons\"]  > [id$=\"ll_buttons\"] > [id$=\"ll_comment_buttons\"] > [id$=\"ll_like\"][visibleToUser=true]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "微博我页签到",
+                    "key": 7,
+                    "activityIds": [
+                        "com.sina.weibo.MainTabActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[id$=\"pdCard_parent\"] > [id$=\"pulldown_view\"] > RecyclerView > ViewGroup > [id$=\"group_recycler_container\"] > RecyclerView > RelativeLayout > [text=\"每日签到\"] + TextView + FrameLayout > [id$=\"cl_root\"] > @[text=\"签到\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "返回微博时候的开屏页广告",
+                    "key": 8,
+                    "activityIds": [
+                        "com.sina.weibo.page.ProfileInfoActivity"
+                    ],
+                    "rules": [
+                        {
+                            "preKeys": [
+                                
+                            ],
+                            "matches": [
+                                "[text=\"广告\"] + RelativeLayout > [text=\"跳过\"]"
+                            ],
+                            "excludeMatches": [
+                                
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
